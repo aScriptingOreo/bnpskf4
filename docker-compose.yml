@@ -1,0 +1,18 @@
+version: "3"
+services:
+  main:
+    container_name: skf4
+    image: itzg/minecraft-server
+    ports:
+      - 25570:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "FORGE"
+      VERSION: "1.12.2"
+      FORGE_INSTALLER: forge-1.12.2-14.23.5.2860-installer.jar
+      MEMORY: "8G"
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./server/:/data
